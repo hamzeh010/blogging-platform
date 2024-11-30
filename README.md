@@ -17,7 +17,7 @@ A modern blogging platform built with **Next.js**, **React**, and **MongoDB**. T
 - 🧪 Jest for unit and integration testing to ensure code reliability and coverage.
 - 🐳 Docker for containerization and environment consistency.
 
-
+```
 ## Prerequisites
 
 Ensure you have the following installed:
@@ -33,6 +33,19 @@ Ensure you have the following installed:
 ```bash
 git clone https://github.com/your-username/blogging-platform.git
 cd blogging-platform
+
+
+```bash
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+
+```
 
 
 npm install
