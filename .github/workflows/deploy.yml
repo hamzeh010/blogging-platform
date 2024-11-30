@@ -32,3 +32,4 @@ jobs:
       npm run build
       pm2 restart nextjs-app || pm2 start npm --name "nextjs-app" -- start
       EOF
+
