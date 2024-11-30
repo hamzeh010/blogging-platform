@@ -13,6 +13,9 @@ A modern blogging platform built with **Next.js**, **React**, and **MongoDB**. T
 - 🎨 **TailwindCSS** for modern styling.
 - ✅ **ESLint** for linting and enforcing coding standards.
 - 🛠️ Fully TypeScript-compatible.
+- 🧪 Jest for unit and integration testing to ensure code reliability and coverage.
+- 🐳 Docker for containerization and environment consistency.
+
 
 ## Prerequisites
 
