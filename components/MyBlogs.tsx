@@ -5,7 +5,7 @@ import { NEXT_PUBLIC_API_BASE_URL } from '@/utils/const/const';
 import { RootState } from '@/redux/store';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { setPosts } from '@/redux/postsSlice';
+import { setBlogs } from '@/redux/postsSlice';
 
 const MyBlog: React.FC = () => {
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ const MyBlog: React.FC = () => {
           throw new Error('Failed to fetch posts');
         }
         const data = await res.json();
-        dispatch(setPosts(data.posts)); // Store posts in Redux
+        dispatch(setBlogs(data.posts)); // Store posts in Redux
       } catch (error) {
         console.log(error);
         setError('Error fetching posts');
@@ -56,7 +56,7 @@ const MyBlog: React.FC = () => {
         <Blog 
         posts={posts}
         isOwner={true}
-        updatedPostsProp={setPosts}>
+        updatedPostsProp={setBlogs}>
           <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
             <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
               {username && username.charAt(0).toUpperCase() + username.slice(1)} Blogs

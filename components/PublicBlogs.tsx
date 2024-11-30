@@ -4,7 +4,7 @@ import { NEXT_PUBLIC_API_BASE_URL } from '@/utils/const/const';
 import { RootState } from '@/redux/store';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { setPosts } from '@/redux/postsSlice';
+import { setBlogs } from '@/redux/postsSlice';
 
 const PublicBlogs: React.FC = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const PublicBlogs: React.FC = () => {
           throw new Error('Failed to fetch posts');
         }
         const data = await res.json();
-        dispatch(setPosts(data.posts)); // Store posts in Redux
+        dispatch(setBlogs(data.posts)); // Store posts in Redux
       } catch (error) {
         console.error(error);
         setError('Error fetching posts');

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link'; // Import the Link component from next/link
-import { useRouter } from 'next/router'; // Import useRouter for redirection
+import { useRouter } from 'next/navigation'; // Import useRouter for redirection
 import Button from './atoms/Button';
 import { NEXT_PUBLIC_API_BASE_URL } from '@/utils/const/const';
 
