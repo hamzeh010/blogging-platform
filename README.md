@@ -118,7 +118,3 @@ Interaction
 Frontend communicates with the backend via REST API endpoints.
 CI/CD Pipeline ensures continuous integration and deployment to production.
 
-
-Running Tests
-
-npm run test
