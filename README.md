@@ -43,6 +43,11 @@ DB_NAME=BlogDb
 
 npm run dev
 
+## Testing 
+
+npm run test
+
+## Project Structure  
 .
 ├── public          # Static assets
 ├── src
