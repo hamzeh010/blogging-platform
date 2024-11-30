@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({
   useEffect(() => {
     const loggedInStatus = isLoggedIn();
     setLoggedIn(loggedInStatus);
-  }, []);
+  }, [isLoggedIn()]);
 
   const handleLogout = async () => {
     try {
