@@ -30,7 +30,6 @@ Ensure you have the following installed:
 git clone https://github.com/your-username/blogging-platform.git
 cd blogging-platform
 
-Install Dependencies
 
 npm install
 
@@ -38,8 +37,6 @@ Configure Environment Variables
 
 MONGO_URI=mongodb://localhost:27017/
 DB_NAME=BlogDb
-
-Start the Server
 
 npm run start
 
@@ -57,11 +54,6 @@ npm run start
 
 
 
-
-Here’s the README updated in Markdown (.md) format with the production link added at the top:
-
-md
-Copy code
 # Blogging Platform
 
 **Production Link**: [https://ai-gpt.ai/](https://ai-gpt.ai/)
@@ -85,43 +77,6 @@ Ensure you have the following installed:
 - **Node.js**: `>=10.9.0`
 - **NPM**: `>=22.11.0`
 - **MongoDB**: A running MongoDB instance.
-
-## Getting Started
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/your-username/blogging-platform.git
-cd blogging-platform
-Install Dependencies
-bash
-Copy code
-npm install
-Configure Environment Variables
-Create a .env.local file in the root directory and configure it as follows:
-
-env
-Copy code
-MONGO_URI=mongodb://localhost:27017/
-DB_NAME=BlogDb
-Start the Server
-bash
-Copy code
-npm run start
-File Structure
-php
-Copy code
-.
-├── public          # Static assets
-├── src
-│   ├── components  # Reusable UI components
-│   ├── pages       # Next.js pages
-│   ├── store       # Redux store
-│   ├── utils       # Utility functions
-│   ├── styles      # TailwindCSS configurations and global styles
-├── .env.local      # Environment variables
-├── package.json    # Project metadata and dependencies
-└── README.md       # Documentation
 
 
 Core Features
@@ -161,12 +116,3 @@ Frontend communicates with the backend via REST API endpoints.
 CI/CD Pipeline ensures continuous integration and deployment to production.
 
 
-
-Prerequisites
-Node.js: >=10.9.0
-NPM: >=22.11.0
-MongoDB: A running MongoDB instance.
-Git: Installed for repository cloning.
-Docker: Optional for containerized setup.
-javascript
-Copy code
