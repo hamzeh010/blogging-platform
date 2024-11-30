@@ -10,12 +10,10 @@ services:
       - .:/app
       - /app/node_modules
     env_file:
-      - .env.local # Default for local
+      - .env.local
     depends_on:
       - mongo
-    command: ["npm", "run", "dev"]  # Use dev script for local development
-    profiles:
-      - local
+    command: ["npm", "run", "dev"]
 
   mongo:
     image: mongo:6.0
@@ -24,8 +22,6 @@ services:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
-    profiles:
-      - local
 
 volumes:
   mongo-data:
