@@ -13,7 +13,7 @@ import navigationLinks from '@/utils/const/navigationLinks';
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
-
+  console.log("version:1")
   useEffect(() => {
     // Set isMounted to true after the first render (client-side only)
     setIsMounted(true);
