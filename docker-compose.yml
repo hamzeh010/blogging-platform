@@ -15,6 +15,17 @@ services:
       - mongo
     command: ["npm", "run", "dev"]
 
+  app-prod:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.production
+    depends_on:
+      - mongo
+    command: ["npm", "start"]
+
   mongo:
     image: mongo:6.0
     container_name: mongo

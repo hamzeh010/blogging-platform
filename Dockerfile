@@ -23,4 +23,4 @@ ENV NODE_ENV=production
 RUN npm run build
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
