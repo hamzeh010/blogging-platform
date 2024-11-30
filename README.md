@@ -47,9 +47,7 @@ $ npm run build
 
 ```
 
-
-npm install
-
+```bash
 Configure Environment Variables
 
 MONGO_URI=mongodb://localhost:27017/
@@ -60,6 +58,8 @@ npm run dev
 ## Testing 
 
 npm run test
+```
+
 
 ## Project Structure  
 .
