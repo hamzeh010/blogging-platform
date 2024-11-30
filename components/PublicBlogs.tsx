@@ -46,7 +46,7 @@ const PublicBlogs: React.FC = () => {
             <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
             Public Blogs
             </h2>
-            <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
+            <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">This page covers a wide range of general topics and insights shared by users across various industries. It serves as a comprehensive resource for business, technical, and project management strategies.</p>
           </div>
         </Blog> // Pass fetched posts to Blog component
       )}
