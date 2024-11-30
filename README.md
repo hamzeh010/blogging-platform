@@ -1,7 +1,8 @@
+**Production Link**: [https://ai-gpt.ai/](https://ai-gpt.ai/)
+
 ```bash
 # Blogging Platform
 
-**Production Link**: [https://ai-gpt.ai/](https://ai-gpt.ai/)
 
 A modern blogging platform built with **Next.js**, **React**, and **MongoDB**. This platform leverages **Redux Toolkit** for state management, **TailwindCSS** for styling, and **JWT** for authentication. It supports features like secure user authentication, blog creation, and a clean user interface.
 
