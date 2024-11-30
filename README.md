@@ -52,6 +52,7 @@ npm run test
 - 🧪 Jest for unit and integration testing to ensure code reliability and coverage.
 - 🐳 Docker for containerization and environment consistency.
 
+```
 
 ## Prerequisites
 
