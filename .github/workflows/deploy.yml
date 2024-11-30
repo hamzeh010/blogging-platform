@@ -3,7 +3,7 @@ name: Deploy to DigitalOcean Droplet
 on:
   push:
     branches:
-      - main # Replace with your deployment branch if different
+      - main
 
 jobs:
   deploy:
@@ -20,16 +20,15 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.DROPLET_SSH_KEY }}
 
-    # Step 3: Pull latest changes and deploy
-    - name: Deploy updates
+    # Step 3: Deploy application
+    - name: Deploy application
       run: |
-      ssh -o StrictHostKeyChecking=no root@144.126.216.56 << 'EOF'
-      export PATH="/root/.nvm/versions/node/v22.11.0/bin:$PATH"
-      cd /var/www/html/blogging-platform
-      git reset --hard
-      git pull origin main
-      npm install
-      npm run build
-      pm2 restart nextjs-app || pm2 start npm --name "nextjs-app" -- start
-      EOF
-
+        ssh -o StrictHostKeyChecking=no root@144.126.216.56 << 'EOF'
+        export PATH="/root/.nvm/versions/node/v22.11.0/bin:$PATH"
+        cd /var/www/html/blogging-platform
+        git reset --hard
+        git pull origin main
+        npm install
+        npm run build
+        pm2 restart nextjs-app || pm2 start npm --name "nextjs-app" -- start
+        EOF
