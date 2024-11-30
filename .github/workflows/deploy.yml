@@ -23,11 +23,12 @@ jobs:
     # Step 3: Pull latest changes and deploy
     - name: Deploy updates
       run: |
-          ssh -o StrictHostKeyChecking=no root@144.126.216.56 << 'EOF'
-          cd /var/www/html/blogging-platform
-          git reset --hard # Reset any uncommitted changes
-          git pull origin main # Pull the latest changes
-          /root/.nvm/versions/node/v22.11.0/bin/npm install # Install dependencies
-          /root/.nvm/versions/node/v22.11.0/bin/npm run build # Build the app
-          /root/.nvm/versions/node/v22.11.0/bin/pm2 restart nextjs-app || /root/.nvm/versions/node/v22.11.0/bin/pm2 start npm --name "nextjs-app" -- start
-          EOF
+      ssh -o StrictHostKeyChecking=no root@144.126.216.56 << 'EOF'
+      export PATH="/root/.nvm/versions/node/v22.11.0/bin:$PATH"
+      cd /var/www/html/blogging-platform
+      git reset --hard
+      git pull origin main
+      npm install
+      npm run build
+      pm2 restart nextjs-app || pm2 start npm --name "nextjs-app" -- start
+      EOF
