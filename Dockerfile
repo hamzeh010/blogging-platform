@@ -11,7 +11,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 # Run tests
-RUN npm run test
+RUN npm test
 
 # Copy the rest of the application code
 COPY . .
