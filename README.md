@@ -1,3 +1,4 @@
+```bash
 # Blogging Platform
 
 **Production Link**: [https://ai-gpt.ai/](https://ai-gpt.ai/)
@@ -27,7 +28,7 @@ Ensure you have the following installed:
 
 ## Getting Started
 
-### Clone the Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/blogging-platform.git
