@@ -29,6 +29,18 @@ git clone https://github.com/your-username/blogging-platform.git
 cd blogging-platform
 
 
+npm install
+
+Create a .env.local file in the root directory and configure it as follows:
+
+MONGO_URI=mongodb://localhost:27017/
+DB_NAME=BlogDb
+
+
+Start the Server
+
+npm run start
+
 .
 ├── public          # Static assets
 ├── src
@@ -91,22 +103,5 @@ cd blogging-platform
 
 ---
 
-## Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/blogging-platform.git
-cd blogging-platform
-
-npm install
-
-Create a .env.local file in the root directory and configure it as follows:
-
-MONGO_URI=mongodb://localhost:27017/
-DB_NAME=BlogDb
 
 
-Start the Server
-
-npm run start
