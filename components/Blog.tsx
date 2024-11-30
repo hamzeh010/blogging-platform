@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Modal from './Modal';
 import Image from 'next/image';
 import { NEXT_PUBLIC_API_BASE_URL } from '@/utils/const/const';
+import Button from './atoms/Button';
 
 interface BlogProps {
   updatedPostsProp?:any;
@@ -109,7 +110,7 @@ const handleDelete = useCallback(
                   </span>
                 </div>
                 
-                <div className="text-right pt-10">
+                <div className="text-right pt-2">
               <a
                   href={article.readMoreLink}
                   className="inline-flex items-center font-medium text-gray-900 dark:text-blue-400 hover:underline"
@@ -130,36 +131,28 @@ const handleDelete = useCallback(
                 </a>
               </div>
               </div>
-              {isOwner ?    <div className="flex justify-end mt-4">
+              {isOwner ?    <div className="flex justify-end mt-4 gap-4">
                 <Link
                   href={"/edit-blog/"+article._id}
-                  className="text-gray-800 bg-[#0284c7]  dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+                  className="rounded focus:outline-none transition-all bg-blue-500 text-white hover:bg-blue-600 text-base px-4 py-2"
                 >
                   Edit
                 </Link>
-                <button
-                  onClick={handleOpen}
-                  className="text-gray-800 bg-red-500 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
-                >
+                <Button onClick={handleOpen} variant="primary" size="medium" type="submit" className="bg-red-500 hover:bg-red-800">
                   Delete
-                </button>
+                </Button>
+              
                 </div>:null}
            
               <Modal isOpen={isOpen} onClose={handleClose} title="Are you sure?">
                 <p>This action cannot be undone.</p>
                <div className="flex justify-end gap-2 mt-4">
-               <button
-                  onClick={handleClose}
-                  className="bg-red-500 text-white px-4 py-2 rounded"
-                >
-                  Close
-                </button>
-                <button
-                  onClick={()=>handleDelete(article._id)}
-                  className="bg-blue-500 text-white px-4 py-2 rounded"
-                >
-                  Yes
-                </button>
+                <Button onClick={handleClose} variant="primary" size="medium" type="submit" className="bg-red-500 hover:bg-red-800">
+                Close
+                </Button>
+                <Button onClick={()=>handleDelete(article._id)} variant="primary" size="medium" type="submit" className="bg-blue-500">
+                Yes
+                </Button>
                </div>
               </Modal>
             </article>

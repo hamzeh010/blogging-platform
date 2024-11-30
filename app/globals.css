@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,10 +17,11 @@ html,#__next{
   }
 }
 
+
 body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; /* Default weight (e.g., Regular) */
   background: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  height: 100%;
 }
 
 /* styles/404.module.css */

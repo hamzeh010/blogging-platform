@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 /** @type {import('tailwindcss').Config} */
 
 export default {
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -20,10 +21,7 @@ export default {
         grey: '#97999B' // grey
       },
       fontFamily: {
-        'open-sans': ['Open Sans', 'sans-serif'],
-        'open-sans-medium': ['Open Sans', 'sans-serif'],
-        'open-sans-semibold': ['Open Sans', 'sans-serif'],
-        'open-sans-extrabold': ['Open Sans', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'], // Add the Poppins font
       },
     },
   },

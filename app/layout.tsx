@@ -5,7 +5,6 @@ import navigationLinks from "../utils/const/navigationLinks";
 
 import "./globals.css";
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,13 +16,13 @@ export default function RootLayout({
         logoSrc="/"
         logoImage="https://flowbite.com/docs/images/logo.svg"
         logoAlt="Flowbite Logo"
-        companyName="Avartra Blogs"
+        companyName="Blogs"
         loginLink="/login"
         navigationLinks={navigationLinks}
         myBlogLink="/create-blog"
       />
       <main className="flex-1">{children}</main>
-      <Footer companyName="Avartra" year={2024} />
+      <Footer companyName="Avertra" year={2024} />
     </div>
   );
 }

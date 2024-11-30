@@ -7,6 +7,7 @@ import { AppProps } from 'next/app';
 import Layout from '../app/layout'; // Assuming layout.tsx is in the same directory or adjust accordingly
 import { isLoggedIn } from '../utils/auth'; // Import your auth function
 
+
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
@@ -14,7 +15,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     // Set isMounted to true after the first render (client-side only)
     setIsMounted(true);
-    console.log("process.env.NEXT_PUBLIC_API_BASE_URL",process.env)
   }, []);
 
   useEffect(() => {
