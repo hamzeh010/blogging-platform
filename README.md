@@ -41,7 +41,7 @@ Configure Environment Variables
 MONGO_URI=mongodb://localhost:27017/
 DB_NAME=BlogDb
 
-npm run start
+npm run dev
 
 .
 ├── public          # Static assets
@@ -131,3 +131,6 @@ Frontend communicates with the backend via REST API endpoints.
 CI/CD Pipeline ensures continuous integration and deployment to production.
 
 
+Running Tests
+
+npm run test
