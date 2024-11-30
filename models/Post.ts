@@ -5,7 +5,7 @@ interface IPost extends Document {
   title: string;
   description: string;
   category: string;
-  readMoreLink: string;
+  details: string;
   userId: mongoose.Types.ObjectId; // Reference to the User model
   createdAt: Date;
   updatedAt: Date;
@@ -17,7 +17,7 @@ const postSchema: Schema = new Schema(
     title: { type: String, required: true },
     description: { type: String, required: true },
     category: { type: String, required: true },
-    readMoreLink: { type: String, required: true },
+    details: { type: String, required: true },
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,

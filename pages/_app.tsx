@@ -6,7 +6,9 @@ import { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
 import Layout from '../app/layout'; // Assuming layout.tsx is in the same directory or adjust accordingly
 import { isLoggedIn } from '../utils/auth'; // Import your auth function
-
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import navigationLinks from '@/utils/const/navigationLinks';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -28,7 +30,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <Layout>
+      <Header
+        logoSrc="/"
+        logoImage="https://flowbite.com/docs/images/logo.svg"
+        logoAlt="Flowbite Logo"
+        companyName="Blogs"
+        loginLink="/login"
+        navigationLinks={navigationLinks}
+        myBlogLink="/create-blog"
+      />
         <Component {...pageProps} />
+        <Footer companyName="Avertra" year={2024} />
       </Layout>
     </Provider>
   );

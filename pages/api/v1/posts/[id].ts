@@ -18,10 +18,10 @@ const handlePost = async (req: NextApiRequest, res: NextApiResponse) => {
   } else if (req.method === 'PUT') {
     // Update a specific post
     try {
-      const { title, content, description, category, readMoreLink } = req.body;
+      const { title, content, description, category, details } = req.body;
       const updatedPost = await Post.findByIdAndUpdate(
         id,
-        { title, content, description, category, readMoreLink, updatedAt: new Date() },
+        { title, content, description, category, details, updatedAt: new Date() },
         { new: true }
       );
       res.status(200).json(updatedPost);

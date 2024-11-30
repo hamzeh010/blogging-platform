@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { GetServerSideProps } from 'next';
 import { isLoggedIn } from '../utils/auth';
 import PublicBlogs from "@/components/PublicBlogs";
 
@@ -30,22 +29,5 @@ import PublicBlogs from "@/components/PublicBlogs";
 }
 
 
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const isAuthenticated = !isLoggedIn();
-
-  if (!isAuthenticated) {
-    return {
-      redirect: {
-        destination: '/login', // Redirect to login if not logged in
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {},
-  };
-};
 
 export default Home;

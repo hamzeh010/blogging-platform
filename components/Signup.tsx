@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link'; // Import the Link component from next/link
 import { useRouter } from 'next/router'; // Import useRouter for redirection
 import Button from './atoms/Button';
+import { NEXT_PUBLIC_API_BASE_URL } from '@/utils/const/const';
 
 const Signup: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ const Signup: React.FC = () => {
 
     try {
       // Make a POST request to the signup API
-      const response = await fetch('/api/v1/auth/signup', {
+      const response = await fetch(`${NEXT_PUBLIC_API_BASE_URL}/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

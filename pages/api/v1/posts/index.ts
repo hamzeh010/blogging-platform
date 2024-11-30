@@ -77,14 +77,14 @@ const handlePosts = async (req: NextApiRequest, res: NextApiResponse) => {
     // Create a new post
     try {
 
-      const { title, description, category, readMoreLink, userId } = req.body;
+      const { title, description, category, details, userId } = req.body;
       const user = await User.findById(userId);
       if (!user) {
         throw new Error('User not found');
       }
 
       // Ensure all required fields are provided
-      if (!title || !description || !category || !readMoreLink) {
+      if (!title || !description || !category || !details) {
         return res.status(400).json({ error: 'Missing required fields' });
       }
 
@@ -92,7 +92,7 @@ const handlePosts = async (req: NextApiRequest, res: NextApiResponse) => {
         title,
         description,
         category,
-        readMoreLink, // Include readMoreLink in the saved post
+        details, // Include details in the saved post
         userId: user._id, // Assign userId
       });
 

@@ -3,12 +3,13 @@ import { getUserId } from '@/utils/auth';
 import { useRouter } from 'next/router';
 import { NEXT_PUBLIC_API_BASE_URL } from '@/utils/const/const';
 import Button from './atoms/Button';
+
 interface BlogProps {
     title: string;
     description: string;
     category: string;
-    readMoreLink: string;
     userId?: any;
+    details: string;
 }
 
 const BlogForm: React.FC = () => {
@@ -18,8 +19,8 @@ const BlogForm: React.FC = () => {
         title: '',
         description: '',
         category: '',
-        readMoreLink: '',
         userId: userId,
+        details:''
     });
 
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -71,14 +72,14 @@ const BlogForm: React.FC = () => {
             });
 
             if (response.ok) {
-                const data = await response.json();
+                 await response.json();
                 setSuccessMessage(isEditMode ? 'Post updated successfully!' : 'Post created successfully!');
                 // Optionally, redirect or clear form after successful submission
                 setArticle({
                     title: '',
                     description: '',
                     category: '',
-                    readMoreLink: '',
+                    details:''
                 });
                 router.push('/my-blogs');
             } else {
@@ -111,7 +112,7 @@ const BlogForm: React.FC = () => {
                         <div className="space-y-4 md:space-y-6">
                             <div>
                                 <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Title
+                                    Title *
                                 </label>
                                 <input
                                     type="text"
@@ -128,7 +129,7 @@ const BlogForm: React.FC = () => {
 
                             <div>
                                 <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Description
+                                    Description *
                                 </label>
                                 <textarea
                                     id="description"
@@ -144,7 +145,7 @@ const BlogForm: React.FC = () => {
 
                             <div>
                                 <label htmlFor="category" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Category
+                                    Category *
                                 </label>
                                 <input
                                     type="text"
@@ -158,20 +159,19 @@ const BlogForm: React.FC = () => {
                                     maxLength={250}
                                 />
                             </div>
+                           
 
                             <div>
-                                <label htmlFor="readMoreLink" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Read More Link
+                                <label htmlFor="Details" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                     Details
                                 </label>
-                                <input
-                                    type="text"
-                                    id="readMoreLink"
-                                    name="readMoreLink"
-                                    value={article.readMoreLink}
+                                <textarea
+                                    id="details"
+                                    name="details"
+                                    value={article.details}
                                     onChange={handleChange}
                                     className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Enter read more link"
-                                    required
+                                    placeholder="Enter description"
                                     maxLength={250}
                                 />
                             </div>

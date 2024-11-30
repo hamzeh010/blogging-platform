@@ -1,12 +1,13 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { isLoggedIn } from '../utils/auth';
 import { useDispatch } from 'react-redux';
 import { logout } from '../redux/authSlice';
 import { NEXT_PUBLIC_API_BASE_URL } from '@/utils/const/const';
-import Image from 'next/image';
+
 
 interface NavigationLink {
   href: string;
@@ -35,11 +36,14 @@ const Header: React.FC<HeaderProps> = ({
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
   const dispatch = useDispatch();
+  const loggedInStatus = isLoggedIn();
 
   useEffect(() => {
-    const loggedInStatus = isLoggedIn();
-    setLoggedIn(loggedInStatus);
-  }, [isLoggedIn()]);
+    const checkLoggedInStatus = async () => {
+      setLoggedIn(loggedInStatus);
+    };
+    checkLoggedInStatus();
+  }, [loggedInStatus]); // No dependencies because `isLoggedIn` is invoked inside
 
   const handleLogout = async () => {
     try {
@@ -67,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({
     <header>
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <div className="flex items-center gap-4">
+          <div className="items-center gap-4 xl:flex hidden">
             <Image
               src="/avertra-white-logo.png"
               alt="Example Image"
