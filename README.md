@@ -15,7 +15,6 @@ A modern blogging platform built with **Next.js**, **React**, and **MongoDB**. T
 git clone https://github.com/your-username/blogging-platform.git
 cd blogging-platform
 
-
 ```bash
 # install dependencies
 $ npm install
@@ -53,7 +52,7 @@ npm run test
 - 🧪 Jest for unit and integration testing to ensure code reliability and coverage.
 - 🐳 Docker for containerization and environment consistency.
 
-```
+
 ## Prerequisites
 
 Ensure you have the following installed:
@@ -79,6 +78,7 @@ Ensure you have the following installed:
 
 
 Singleton Design Pattern in Redux
+
 In this project, we utilize the Singleton Design Pattern for managing the application state with Redux.
 
 Why Singleton?
